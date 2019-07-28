@@ -1,0 +1,169 @@
+// sass --watch scss/style.scss:css/style.css
+
+/* 
+扱うアニメーションの紹介
+
+transition
+translate
+rotate
+keyframes
+
+
+transition-timing-function: ease;
+transition-timing-function: ease-in;
+transition-timing-function: ease-out;
+transition-timing-function: ease-in-out;
+transition-timing-function: linear;
+transition-timing-function: step-start;
+transition-timing-function: step-end;
+ */
+
+
+
+.transition {
+  &-template {
+    opacity: 1;
+    padding: 10px;
+    width: 150px;
+    margin: 150px auto;
+    text-align: center;
+    // ----------------
+    transition: .7s;
+    // ----------------
+    &__01 {
+      background: #aa7;
+    }
+    &__02 {
+      background: #aa14;
+    }
+    &__03 {
+      background: #aa21;
+    }
+    &__04 {
+      background: #aa28;
+    }
+    &__05 {
+        background: #aa35;
+    }
+    &__06 {
+      background:linear-gradient(red, navy);
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+    }
+    &__07 {
+      background: #aa42;
+    }
+
+
+    &__01 {
+      &:hover {
+        transform: translate(-20px, -20px);
+      }
+    }
+    &__02 {
+      &:hover {
+        transform: rotate(300deg);
+      }
+    }
+    &__03 {
+      &:hover {
+        transform: scale(2, 2);
+      }
+    }
+    &__04 {
+      &:hover {
+        transform: skew(30deg);
+      }
+    }
+    &__05 {
+      opacity: 0;
+      &:hover {
+        opacity: 1;
+        transition-delay: 1s;
+      }
+    }
+    &__06 {
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        background: #fff;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        transition: .7s;
+      }
+      &:hover {
+        transform: rotate(300deg);
+        opacity: 1 !important;
+        span {
+          transform: rotate(-300deg);
+        }
+      }
+    }
+
+    &__07 {
+      opacity: 0;
+      &.inview {
+        transition: .7s;
+        opacity: 1;
+      }
+    }
+
+    &__08 {
+      @keyframes Rolling {
+        0% {}
+        100% { transform: rotate(360deg) }
+      }
+      position: relative;
+      .gear {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: #888;
+        animation-name: Rolling;
+        animation-timing-function: linear;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        position: relative;
+        z-index: -1;
+        span {
+          position: absolute;
+          background: #888;
+          width: 100px;
+          height: 100px;
+          top: -55px;
+          transform: rotate(19deg);
+          &:nth-of-type(2) {
+            left: -40px;
+            transform: rotate(35deg);
+            top: 10px;
+          }
+          &:nth-of-type(3) {
+            left: -36px;
+            transform: rotate(-32deg);
+            top: 201px;
+          }
+          &:nth-of-type(4) {
+            left: 252px;
+            transform: rotate(0deg);
+            top: 87px;
+          }
+          &:nth-of-type(5) {
+            left: 153px;
+            transform: rotate(64deg);
+            top: 249px;
+          }
+        }
+      }
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>CSS勉強会見本</title>
+</head>
+
+<body>
+
+
+  <main>
+
+
+    <div class="transition">
+
+      <div class="transition-template transition-template__01">01</div>
+
+      <div class="transition-template transition-template__02">02</div>
+
+      <div class="transition-template transition-template__03">03</div>
+
+      <div class="transition-template transition-template__04">04</div>
+
+      <div class="transition-template transition-template__05">05</div>
+
+      <div class="transition-template transition-template__06"><span>06</span></div>
+
+
+      <div class="transition-template transition-template__07">07</div>
+
+
+      <div class="transition-template transition-template__08">
+        <div class="gear">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/jquery.inview.js"></script>
+
+  <script>
+    const transition = ".transition-template";
+
+    $(function () {
+      $(transition + '__07').on('inview', function () {
+        $(this).toggleClass('inview');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
